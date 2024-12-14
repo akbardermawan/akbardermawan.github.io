@@ -90,6 +90,32 @@ document.querySelectorAll(".modalbox2 .doc").forEach((img) => {
   });
 });
 
+// Modal Box 3
+const modalBox3 = document.querySelector(".modalbox3");
+const detailButtons3 = document.querySelectorAll(".detail3");
+
+detailButtons3.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    modalBox3.style.display = "flex";
+    e.preventDefault();
+  });
+});
+
+const closeIcon3 = document.querySelector(".close-icon3");
+closeIcon3.addEventListener("click", (e) => {
+  modalBox3.style.display = "none";
+  e.preventDefault();
+});
+
+// Modal3 box container
+document.querySelectorAll(".modalbox3 .doc").forEach((img) => {
+  img.addEventListener("click", function () {
+    const mainImage = document.getElementById("mainImage3");
+    mainImage.src = this.src;
+    mainImage.alt = this.alt;
+  });
+});
+
 // autoScroll
 function startAutoscroll() {
   const sections = document.querySelectorAll("section");

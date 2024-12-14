@@ -18,7 +18,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(240, 255, 240);
+  background-color: white;
   color: #fff;
 }
 
@@ -96,7 +96,11 @@ body {
 
 /* home */
 .home {
-  padding: 12rem 7% 1.4rem;
+  padding: 10rem 7% 1.4rem;
+  background-image: url("../img/bgc1.jpg"); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: bottom; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
 }
 
 .home .row {
@@ -107,12 +111,24 @@ body {
   color: black;
 }
 .home .row .home-img {
-  border-radius: 20px;
-  flex: 1 1 45rem;
-  overflow: hidden;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 50%; /* Membuat gambar berbentuk bulat */
+  flex: 1 1 45rem; /* Menentukan fleksibilitas elemen dalam row */
+  overflow: hidden; /* Menyembunyikan bagian gambar di luar border */
+  display: flex; /* Tambahkan agar elemen anak lebih responsif */
+  justify-content: center; /* Menyesuaikan posisi gambar secara horizontal */
+  align-items: center; /* Menyesuaikan posisi gambar secara vertikal */
+  border: 4px solid #f0f0f0; /* Menambahkan border putih agar lebih estetik */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan lembut */
+  margin-right: 2rem; /* Memberi jarak pada elemen sebelah kanan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek interaksi */
 }
+
 .home .row .home-img img {
-  width: 75%;
+  width: 100%; /* Gambar memenuhi elemen induknya */
+  height: auto; /* Mempertahankan rasio gambar */
+  object-fit: cover; /* Memastikan gambar tetap proporsional saat dibulatkan */
 }
 .home .content {
   color: black;
@@ -214,10 +230,11 @@ body {
   color: inherit;
 }
 .project {
-  padding: 6rem;
+  padding: 4rem;
 }
 .project h2 {
-  color: gray;
+  padding-top: 1rem;
+  color: black;
   text-align: center;
   font-size: 2.7rem;
   margin-bottom: 4rem;
@@ -314,32 +331,82 @@ body {
   overflow: hidden;
   transition: transform 0.3s;
   background-color: #fff;
+  position: relative; /* Dibutuhkan untuk posisi pseudo-elemen */
+  padding: 1rem; /* Memberi ruang di dalam kartu */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project .project-card:hover {
-  transform: scale(1.05) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Animasi Border dengan ::before */
+.project .project-card::before {
+  content: ""; /* Membuat pseudo-elemen */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent; /* Border awal transparan */
+  border-radius: 8px;
+  background: linear-gradient(90deg, green, white, white);
+  background-size: 300% 300%; /* Ukuran background lebih besar untuk animasi */
+  z-index: 1; /* Di atas konten kartu */
+  pointer-events: none; /* Tidak mengganggu interaksi mouse */
+  animation: moveBorder 4s linear infinite;
+}
+/* Animasi Border */
+@keyframes moveBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Overlay agar tidak menutupi konten kartu */
+.project .project-card::after {
+  content: "";
+  position: absolute;
+  top: 5px; /* Jarak dengan border luar */
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background-color: #fff;
+  border-radius: 8px;
+  z-index: 2; /* Di atas border pseudo-elemen */
 }
 
 .project .project-image img {
   width: 100%; /* Responsif */
   height: auto;
   display: block;
+  z-index: 3; /* Di atas layer animasi */
+  position: relative;
 }
 
 .project .project-content h3 {
   font-size: 1.8rem;
   color: #333;
   margin: 1rem 0;
+  z-index: 3;
+  position: relative;
 }
 .project .project-content span {
   color: #007bff;
   font-size: 1rem;
+  z-index: 3;
+  position: relative;
 }
 .project .project-icon {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
+  z-index: 3;
+  position: relative;
 }
 
 .project .project-icon a {
@@ -480,8 +547,8 @@ footer .credit a {
   background-color: rgba(0, 0, 0, 0.788);
 }
 .modalbox1 .modal-container {
+  background-color: white;
   position: relative;
-  background-color: #fefefe;
   color: var(--bg);
   margin: 20px auto;
   padding: 1.2rem;
@@ -627,6 +694,90 @@ footer .credit a {
   width: 20%;
 }
 
+/* modalbox3 */
+.modalbox3 {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.788);
+}
+.modalbox3 .modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 20px auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.modalbox3 .modal-container .close-icon3 {
+  position: absolute;
+  right: 1rem;
+}
+.modalbox3 .modal-container .modal-content {
+}
+.modalbox3 .modal-container .modal-content img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+.modalbox3 .modal-container .modal-content h3 {
+  font-size: 2.5rem;
+  color: black;
+}
+.modalbox3 .modal-container .modal-content span {
+  color: #007bff;
+}
+.modalbox3 .modal-container .modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+  color: black;
+}
+.modalbox3 .modal-container .modal-content a {
+  width: 12rem;
+  color: black;
+}
+.modalbox3 .modal-container .modal-content .document {
+  margin-top: 2rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.modalbox3 .modal-container .modal-content .document .doc {
+  width: 20%;
+}
+
+.modalbox .modal-container {
+  border-radius: 10px;
+  background-image: url("../img/pt1.jpg"); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: center; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+}
+.modalbox .modal-container img {
+  border: 2px gray solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* mediaQuery */
 
 /* laptop */
@@ -725,20 +876,26 @@ footer .credit a {
   .home {
     padding: 10rem 7% 1.4rem;
   }
+
   .home .row .home-img {
+    border-radius: 0%;
     display: flex;
     text-align: center;
     justify-content: center;
+    border: none; /* Menambahkan border putih agar lebih estetik */
+    box-shadow: none; /* Menambahkan bayangan lembut */
+    margin-right: 0; /* Memberi jarak pada elemen sebelah kanan */
   }
   .home .row .home-img img {
     width: 60%; /* Gambar akan memenuhi lebar kontainer */
     height: auto; /* Mempertahankan aspek rasio gambar */
     object-fit: cover; /* Menjamin gambar terlihat penuh */
+    border-radius: 20%;
   }
-  .modalbox1 .modal-container .modal-content .document {
+  .modalbox .modal-container .modal-content .document {
     display: none;
   }
-  .modalbox1 .modal-container {
+  .modalbox .modal-container {
     margin: 50% auto;
   }
   .project .slider-container {
