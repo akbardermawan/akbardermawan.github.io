@@ -732,13 +732,12 @@ footer .credit a {
 }
 .modalbox3 .modal-container .modal-content {
 }
-.modalbox3 .modal-container .modal-content img {
+.modalbox3 .modal-container .modal-content > img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70%;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  width: 50%;
+  margin-left: 20%;
 }
 .modalbox3 .modal-container .modal-content h3 {
   font-size: 2.5rem;
