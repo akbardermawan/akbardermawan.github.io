@@ -229,6 +229,214 @@ body {
   font-size: 18px; /* Ukuran ikon */
   color: inherit;
 }
+/* about */
+.about {
+  margin: auto;
+  max-width: 1400px;
+  padding: 4rem;
+  color: black;
+  padding-top: 8rem;
+}
+.about .top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 25rem;
+}
+.about .top .top-left {
+  width: 55%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  background-image: url("../img/bgc2.JPG"); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: bottom; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+}
+.about .top .top-left h6 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: rgb(224, 241, 176);
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.67);
+  font-weight: bold;
+}
+.about .top .top-right {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.about .top .top-right .top-right-top {
+  width: 100%;
+  height: 45%;
+  background-color: hsla(0, 0%, 3%, 0.199);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about .top .top-right .top-right-top h6 {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.2;
+}
+.about .top .top-right .top-right-bottom {
+  width: 100%;
+  height: 45%;
+  background-color: hsla(0, 0%, 3%, 0.199);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.about .top .top-right .top-right-bottom .top-right-bottom-top {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+}
+.about .top .top-right .top-right-bottom .top-right-bottom-top h6 {
+  font-size: 1.8rem;
+  color: teal;
+  font-weight: 900;
+}
+.about .top .top-right .top-right-bottom .top-right-bottom-bottom {
+  margin-top: 4rem;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+.about .top .top-right .top-right-bottom .top-right-bottom-bottom img {
+  border-radius: 20%;
+}
+
+.about .bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 25rem;
+  margin-top: 2rem;
+}
+.about .bottom .bottom-left {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.about .bottom .bottom-left .bottom-left-top {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: hsla(0, 0%, 3%, 0.199);
+  border-radius: 20px;
+  background-image: url("../img/bgc4.jpg"); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: bottom; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+  padding-top: 2rem;
+}
+.about .bottom .bottom-left .bottom-left-top h6 {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.788);
+}
+.about .bottom .bottom-left .bottom-left-bottom {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 3%, 0.199);
+  border-radius: 20px;
+}
+.about .bottom .bottom-left .bottom-left-bottom h6 {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.2;
+}
+.about .bottom .bottom-left .bottom-left-bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.about .bottom .bottom-left .bottom-left-bottom a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about .bottom .bottom-left .bottom-left-bottom a:hover::before {
+  width: 0;
+  height: 0;
+}
+
+.about .bottom .bottom-left .bottom-left-bottom a:hover {
+  background-color: darkgreen;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.about .bottom .bottom-right {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  border-radius: 20px;
+  background-image: url("../img/bgc3.JPG"); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: bottom; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+}
+.about .bottom .bottom-right p {
+  font-size: 1rem;
+  color: white;
+}
+.about .bottom .bottom-right h6 {
+  font-size: 2rem;
+  text-align: left;
+  line-height: 1.2;
+  /* Menyesuaikan warna teks berdasarkan latar belakang */
+  color: white; /* Jika latar belakangnya gelap */
+  mix-blend-mode: difference; /* Untuk menyesuaikan warna otomatis */
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.67);
+  font-weight: bold;
+}
+/* project */
 .project {
   padding: 4rem;
 }
@@ -435,9 +643,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 4rem;
+  color: rgb(224, 241, 176);
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.904);
+  font-weight: bold;
 }
 .contact p {
   padding-left: 1rem;
@@ -622,6 +832,7 @@ footer .credit a {
 .modalbox1 .modal-container .modal-content .document .doc {
   width: 20%;
 }
+
 /* modalbox2 */
 .modalbox2 {
   display: none;
@@ -765,6 +976,223 @@ footer .credit a {
   width: 20%;
 }
 
+/* modalbox4 */
+.modalbox4 {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.788);
+}
+.modalbox4 .modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 20px auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.modalbox4 .modal-container .close-icon4 {
+  position: absolute;
+  right: 1rem;
+}
+.modalbox4 .modal-container .modal-content {
+}
+.modalbox4 .modal-container .modal-content img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+.modalbox4 .modal-container .modal-content h3 {
+  font-size: 2.5rem;
+  color: black;
+}
+.modalbox4 .modal-container .modal-content span {
+  color: #007bff;
+}
+.modalbox4 .modal-container .modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+  color: black;
+}
+.modalbox4 .modal-container .modal-content a {
+  width: 12rem;
+  color: black;
+}
+.modalbox4 .modal-container .modal-content .document {
+  margin-top: 2rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.modalbox4 .modal-container .modal-content .document .doc {
+  width: 20%;
+}
+
+/* modalbox5 */
+.modalbox5 {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.788);
+}
+.modalbox5 .modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 20px auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.modalbox5 .modal-container .close-icon5 {
+  position: absolute;
+  right: 1rem;
+}
+.modalbox5 .modal-container .modal-content {
+}
+.modalbox5 .modal-container .modal-content img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 57%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+.modalbox5 .modal-container .modal-content h3 {
+  font-size: 2.5rem;
+  color: black;
+}
+.modalbox5 .modal-container .modal-content span {
+  color: #007bff;
+}
+.modalbox5 .modal-container .modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+  color: black;
+}
+.modalbox5 .modal-container .modal-content a {
+  width: 12rem;
+  color: black;
+}
+.modalbox5 .modal-container .modal-content .document {
+  margin-top: 2rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.modalbox5 .modal-container .modal-content .document .doc {
+  width: 20%;
+}
+
+/* modalbox6 */
+.modalbox6 {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.788);
+}
+.modalbox6 .modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 20px auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.modalbox6 .modal-container .close-icon6 {
+  position: absolute;
+  right: 1rem;
+}
+.modalbox6 .modal-container .modal-content {
+}
+.modalbox6 .modal-container .modal-content img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 57%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+.modalbox6 .modal-container .modal-content h3 {
+  font-size: 2.5rem;
+  color: black;
+}
+.modalbox6 .modal-container .modal-content span {
+  color: #007bff;
+}
+.modalbox6 .modal-container .modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+  color: black;
+}
+.modalbox6 .modal-container .modal-content a {
+  width: 12rem;
+  color: black;
+}
+.modalbox6 .modal-container .modal-content .document {
+  margin-top: 2rem;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.modalbox6 .modal-container .modal-content .document .doc {
+  width: 20%;
+}
+
+/* modal box umum */
 .modalbox .modal-container {
   border-radius: 10px;
   background-image: url("../img/pt1.jpg"); /* Ganti dengan path gambar Anda */
@@ -890,6 +1318,30 @@ footer .credit a {
     height: auto; /* Mempertahankan aspek rasio gambar */
     object-fit: cover; /* Menjamin gambar terlihat penuh */
     border-radius: 20%;
+  }
+  .about .top .top-left {
+    width: 100%;
+  }
+  .about .top .top-left h6 {
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+  .about .top .top-right {
+    display: none;
+  }
+  .about .bottom .bottom-left .bottom-left-bottom h6,
+  .about .bottom .bottom-left .bottom-left-top h6,
+  .about .bottom .bottom-left .bottom-left-bottom a {
+    font-size: 1rem;
+  }
+  .about .bottom .bottom-left .bottom-left-bottom a {
+    width: 8rem;
+    height: 2.2rem;
   }
   .modalbox .modal-container .modal-content .document {
     display: none;

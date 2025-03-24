@@ -116,6 +116,84 @@ document.querySelectorAll(".modalbox3 .doc").forEach((img) => {
   });
 });
 
+// Modal Box 4
+const modalBox4 = document.querySelector(".modalbox4");
+const detailButtons4 = document.querySelectorAll(".detail4");
+
+detailButtons4.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    modalBox4.style.display = "flex";
+    e.preventDefault();
+  });
+});
+
+const closeIcon4 = document.querySelector(".close-icon4");
+closeIcon4.addEventListener("click", (e) => {
+  modalBox4.style.display = "none";
+  e.preventDefault();
+});
+
+// Modal4 box container
+document.querySelectorAll(".modalbox4 .doc").forEach((img) => {
+  img.addEventListener("click", function () {
+    const mainImage = document.getElementById("mainImage4");
+    mainImage.src = this.src;
+    mainImage.alt = this.alt;
+  });
+});
+
+// Modal Box 5
+const modalBox5 = document.querySelector(".modalbox5");
+const detailButtons5 = document.querySelectorAll(".detail5");
+
+detailButtons5.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    modalBox5.style.display = "flex";
+    e.preventDefault();
+  });
+});
+
+const closeIcon5 = document.querySelector(".close-icon5");
+closeIcon5.addEventListener("click", (e) => {
+  modalBox5.style.display = "none";
+  e.preventDefault();
+});
+
+// Modal5 box container
+document.querySelectorAll(".modalbox5 .doc").forEach((img) => {
+  img.addEventListener("click", function () {
+    const mainImage = document.getElementById("mainImage5");
+    mainImage.src = this.src;
+    mainImage.alt = this.alt;
+  });
+});
+
+// Modal Box 6
+const modalBox6 = document.querySelector(".modalbox6");
+const detailButtons6 = document.querySelectorAll(".detail6");
+
+detailButtons6.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    modalBox6.style.display = "flex";
+    e.preventDefault();
+  });
+});
+
+const closeIcon6 = document.querySelector(".close-icon6");
+closeIcon6.addEventListener("click", (e) => {
+  modalBox6.style.display = "none";
+  e.preventDefault();
+});
+
+// Modal6 box container
+document.querySelectorAll(".modalbox6 .doc").forEach((img) => {
+  img.addEventListener("click", function () {
+    const mainImage = document.getElementById("mainImage6");
+    mainImage.src = this.src;
+    mainImage.alt = this.alt;
+  });
+});
+
 // autoScroll
 function startAutoscroll() {
   const sections = document.querySelectorAll("section");
