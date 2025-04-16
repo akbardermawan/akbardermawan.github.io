@@ -92,7 +92,53 @@ body {
   color: #359381;
   display: none;
 }
-/* parallax */
+/* navbar 2 */
+.navbar2 {
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navbar2 .navbar-nav {
+  background-color: #359381;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.navbar2 .navbar-nav:hover {
+  background-color: orange;
+}
+
+.navbar2 .icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar2 .icon-btn:hover {
+  color: black;
+}
+
+.navbar2 i {
+  width: 24px;
+  height: 24px;
+}
 
 /* home */
 .home {
@@ -160,10 +206,12 @@ body {
   align-items: center;
   font-size: 2.5rem;
 }
+
 .home .row .content .job {
   color: #4202f0;
   font-size: 0.8rem;
 }
+
 .home .row .content p {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
@@ -228,6 +276,9 @@ body {
   margin-left: 8px; /* Memberikan jarak antara teks dan ikon */
   font-size: 18px; /* Ukuran ikon */
   color: inherit;
+}
+.home .row .content .controls {
+  margin-top: 3rem;
 }
 /* about */
 .about {
@@ -338,10 +389,7 @@ body {
   align-items: start;
   background-color: hsla(0, 0%, 3%, 0.199);
   border-radius: 20px;
-  background-image: url("../img/bgc4.jpg"); /* Ganti dengan path gambar Anda */
-  background-size: cover; /* Agar gambar menutupi seluruh area */
-  background-position: bottom; /* Pusatkan gambar */
-  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+  background: rgba(12, 51, 14, 0.61);
   padding-top: 2rem;
 }
 .about .bottom .bottom-left .bottom-left-top h6 {
@@ -415,16 +463,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-
   border-radius: 20px;
-  background-image: url("../img/bgc3.JPG"); /* Ganti dengan path gambar Anda */
-  background-size: cover; /* Agar gambar menutupi seluruh area */
-  background-position: bottom; /* Pusatkan gambar */
-  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+  overflow: hidden;
+  position: relative;
 }
 .about .bottom .bottom-right p {
   font-size: 1rem;
   color: white;
+  position: absolute;
+  left: 5%;
+  top: 30%;
 }
 .about .bottom .bottom-right h6 {
   font-size: 2rem;
@@ -435,6 +483,12 @@ body {
   mix-blend-mode: difference; /* Untuk menyesuaikan warna otomatis */
   text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.67);
   font-weight: bold;
+  position: absolute;
+  left: 5%;
+  top: 40%;
+}
+.about .bottom .bottom-right img {
+  width: 100%;
 }
 /* project */
 .project {
@@ -442,10 +496,11 @@ body {
 }
 .project h2 {
   padding-top: 1rem;
-  color: black;
   text-align: center;
   font-size: 2.7rem;
   margin-bottom: 4rem;
+  color: #359381;
+  text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.308);
 }
 /* slidebar */
 .slider-container {
@@ -632,11 +687,7 @@ body {
 
 /* contact */
 .contact {
-  padding-top: 6rem;
-  background-image: url("../img/ct.jpg"); /* Ganti dengan path gambar Anda */
-  background-size: cover; /* Agar gambar menutupi seluruh area */
-  background-position: top; /* Pusatkan gambar */
-  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+  padding-top: 2rem;
 }
 
 .contact h2 {
@@ -644,9 +695,9 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  margin-bottom: 4rem;
-  color: rgb(224, 241, 176);
-  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.904);
+  margin-bottom: 3rem;
+  color: #359381;
+  text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.308);
   font-weight: bold;
 }
 .contact p {
@@ -667,7 +718,7 @@ body {
   max-width: 500px; /* Membatasi lebar form agar tidak terlalu lebar */
   padding: 2rem;
   text-align: center;
-  background-color: #fff9f925;
+  background-color: #02020225;
   border-radius: 8px;
 }
 
@@ -1216,6 +1267,9 @@ footer .credit a {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
   }
+  .home .row .content .controls {
+    margin-top: 2rem;
+  }
   .modalbox1 .modal-container {
     margin: 10% auto;
   }
@@ -1297,9 +1351,7 @@ footer .credit a {
   .navbar .navbar-extra {
     right: 8px;
   }
-  .navbar .navbar-logo span {
-    display: none;
-  }
+
   .home {
     padding: 10rem 7% 1.4rem;
   }
@@ -1319,6 +1371,10 @@ footer .credit a {
     object-fit: cover; /* Menjamin gambar terlihat penuh */
     border-radius: 20%;
   }
+  .home .row .content .controls {
+    margin-top: 0;
+  }
+
   .about .top .top-left {
     width: 100%;
   }
@@ -1343,6 +1399,11 @@ footer .credit a {
     width: 8rem;
     height: 2.2rem;
   }
+  .about .bottom .bottom-right img {
+    width: auto;
+    height: 100%;
+  }
+
   .modalbox .modal-container .modal-content .document {
     display: none;
   }
@@ -1350,6 +1411,9 @@ footer .credit a {
     margin: 50% auto;
   }
   .project .slider-container {
+    display: none;
+  }
+  .project .hiden {
     display: none;
   }
 }

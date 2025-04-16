@@ -275,3 +275,16 @@ function resetAutoSlide() {
 
 // Initialize the slider
 updateSlider();
+
+//Dwonload file Assets
+function downloadPDF() {
+  const pdfUrl = "assets/fileku.pdf"; // Ganti dengan link file PDF kamu
+  const fileName = "cv_akbar.pdf";
+
+  const a = document.createElement("a");
+  a.href = pdfUrl;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
