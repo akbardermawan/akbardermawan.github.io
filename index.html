@@ -17,14 +17,18 @@
       rel="stylesheet"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <!-- anime on scroll aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <!-- Navbar Start -->
-    <nav class="navbar">
-      <a href="#" class="navbar-logo"
-      >Akbar <span>Dermawan Mahbubillah</span>
+    <nav class="navbar" id="navbar">
+      <a href="#" class="navbar-logo" id="navbar-logo"
+      >Akbar <span>Dermawan </span>
       </a>
 
       <div class="navbar-nav">
@@ -32,6 +36,7 @@
         <a href="#about">About</a>
         <a href="#project">Projects</a>
         <a href="#contact">Contact</a>
+        <button id="toggleBtn">Dark Mode</button>
       </div>
       <div class="navbar-extra">
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
@@ -40,8 +45,8 @@
     </nav>
     <!-- Navbar end -->
 
-    <div class="navbar2">
-      <div class="navbar-nav ">
+    <div class="navbar2" id="navbar2">
+      <div class="navbar-nav " >
         <button onclick="downloadPDF()" class="icon-btn"><i data-feather="file-text"></i></button>
       </div>
       <div class="navbar-nav ">
@@ -56,7 +61,7 @@
         <div class="home-img">
           <img src="img/pf.jpg" alt=""/>
         </div>
-        <div class="content">
+        <div class="content" id="content">
           <a href="https://github.com/akbardermawan"
             ><h3>Akbar Dermawan Mahbubillah</h3></a
           >
@@ -65,10 +70,12 @@
 
           <p id="typing-text"></p>
           <div class="info">
-            <div><span class="label">Gender:</span>Male</div>
-            <div><span class="label">Age:</span> 27</div>
-            <div><span class="label">No Hp:</span>082337528525</div>
-            <div><span class="label">email:</span>akbardermawan27@gmail.com</div>
+            <div><span class="label">Gender: </span>Male</div>
+            <div><span class="label">Age: </span> 27</div>
+            <div><span class="label">No Hp: </span>082337528525</div>
+            <div><span class="label">Email: </span><a href="https://mail.google.com/mail/u/0/#search/akbardermawan1998%40gmail.com">akbardermawan27@gmail.com</a></div>
+            <div><span class="label">LinkedIn: </span> <a href="https://www.linkedin.com/in/akbar-dermawan-30bb6a210/">akbar-dermawan</a></div>
+
           </div>
           <div class="controls">
             <button id="startScroll"><span>lets go</span> <i data-feather="chevron-down"></i> </button>
@@ -81,32 +88,39 @@
     <!-- about -->
     <section class="about" id="about">
       <div class="top">
+        <div class="top-left" data-aos="fade-down" data-aos-duration="1000"  data-aos-delay="0" ><h6> I priortize client collaboration, fostering open communication</h6></div>
+        <div class="top-right" data-aos="fade-left" data-aos-duration="1500"  data-aos-delay="50">
+          <div class="top-right-top" >
+            <div class="box"><i data-feather="code"></i></div>
+            <div class="text"><P>
+              With over two years in software development, I've built various web apps and tools using different languages and frameworks to create efficient, scalable solutions.
+            </P></div>
+          </div>
+          <div class="top-right-bottom" >
+            <div class="box"><i data-feather="globe"></i></div>
+            <div><P>
+              I'm a full-stack web developer skilled in Next.js, React, TypeScript, and Tailwind CSS, passionate about creating high-performance, scalable apps with clean code.
+            </P></div>
+          </div>
 
-        <div class="top-left"><h6> I priortize client collaboration, fostering open communication</h6></div>
+        </div>    
+      </div>
+      
+      <div class="bottom" data-aos="fade-up" data-aos-duration="2000"  data-aos-delay="50">
+        <div class="bottom-left">
 
-        <div class="top-right">
-
-          <div class="top-right-top"><h6>I'm very flexible with time zone communications</h6></div>
-
-          <div class="top-right-bottom">
-            <div class="top-right-bottom-top">
+          <div class=" bottom-left-top">
+            <div class="bottom-left-top-top">
               <p>I constantly try to improve</p>
               <h6>My teach stack</h6>
             </div>
-            <div class="top-right-bottom-bottom">
+            <div class="bottom-left-top-bottom">
               <img src="/img/z1.JPG" alt=".net">
               <img src="/img/z2.JPG" alt=".net">
               <img src="/img/z3.JPG" alt=".net">
             </div>
-           
           </div>
 
-        </div>
-      </div>
-      
-      <div class="bottom">
-        <div class="bottom-left">
-          <div class=" bottom-left-top"><h6>Teach enthusiast with a passion for development.</h6></div>
           <div class="bottom-left-bottom">
             <h6>Do you want to start a project together?</h6>
             <a href="#contact">Contact Me</a>
@@ -348,9 +362,8 @@
             <a href="https://github.com/akbardermawan/ASP.NET_CRUD" class="" target="_blank">Go to Code </a>
           </div>
         </div>
-
-
       </div>
+
     </section>
 
     <!-- contact start -->
@@ -394,16 +407,18 @@
     </section>
 
  <!-- Footer Item detail-->
- <footer>
-  <div class="socials">
-    <a href="https://www.instagram.com/akbardermawanzzz/" target="_blank"><i data-feather="instagram"></i></a>
-    <a href=""><i data-feather="twitter"></i></a>
-    <a href="https://www.facebook.com/akbar.dermawan.965/"><i data-feather="facebook"></i></a>
-    <a href="https://github.com/akbardermawan" target="_blank"><i data-feather="github"></i></a>
-  </div>
-  <div class="credit">
-    <p>Creat by <a href="https://mail.google.com/mail/u/0/#search/akbardermawan27%40gmail.com?compose=ne">akbardermawan27@gmail.com</a> | &copy; 2024</p>
-  </div>
+ <footer id="footer">
+  
+    <div class="socials">
+      <a href="https://www.instagram.com/akbardermawanzzz/" target="_blank"><i data-feather="instagram"></i></a>
+      <a href=""><i data-feather="twitter"></i></a>
+      <a href="https://www.facebook.com/akbar.dermawan.965/"><i data-feather="facebook"></i></a>
+      <a href="https://github.com/akbardermawan" target="_blank"><i data-feather="github"></i></a>
+    </div>
+    <div class="credit">
+      <p>Creat by <a href="https://mail.google.com/mail/u/0/#search/akbardermawan27%40gmail.com?compose=ne">akbardermawan27@gmail.com</a> | &copy; 2024</p>
+    </div>
+
 </footer>
 
 <!-- Modal box -->
@@ -570,11 +585,15 @@
      AOS.init();
    </script>
 
-   <!-- GSAP -->
+   <!-- GSAP  -->
+    <!-- memanggil cdn GSAP -->
    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+   <!-- GSAP untuk navbar -->
    <script>
     gsap.from('.navbar', {duration:1, y:-100, opacity:0, ease: 'bounce'});
+    gsap.from('.navbar2', {duration:1, x:50, opacity:0, ease: 'power2.in'});
    </script>
+
 
 
 

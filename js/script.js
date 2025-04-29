@@ -288,3 +288,265 @@ function downloadPDF() {
   a.click();
   document.body.removeChild(a);
 }
+
+// ------------------------
+// dark Mode
+// ------------------------
+const body = document.body;
+const footer = document.getElementById("footer");
+const toggleBtn = document.getElementById("toggleBtn");
+const home = document.getElementById("home");
+const about = document.getElementById("about");
+const project = document.getElementById("project");
+const contact = document.getElementById("contact");
+const navbar = document.getElementById("navbar");
+const navbar2 = document.getElementById("navbar2");
+const content = document.getElementById("content");
+
+// text berjalan
+const textMove = document.createElement("div");
+textMove.classList.add("marquee-container");
+
+const marqueeDiv = document.createElement("div");
+marqueeDiv.classList.add("marquee-text");
+marqueeDiv.id = "marquee";
+marqueeDiv.textContent = "Akbar Dermawan Mahbubillah";
+
+textMove.appendChild(marqueeDiv);
+
+let animationId; // Untuk menyimpan ID animasi agar bisa dihentikan
+
+//Navbar
+
+const homeNav = document.createElement("a");
+homeNav.href = "#home";
+const iHome = document.createElement("i");
+iHome.setAttribute("data-feather", "home");
+homeNav.appendChild(iHome);
+
+const projectNav = document.createElement("a");
+projectNav.href = "#project";
+const iProject = document.createElement("i");
+iProject.setAttribute("data-feather", "file-text");
+projectNav.appendChild(iProject);
+
+const buttonNav = document.createElement("button");
+buttonNav.id = "toggleBtn2";
+buttonNav.textContent = "Light Mode";
+
+//Home
+// Dark mode image
+const darkImgDiv = document.createElement("div");
+darkImgDiv.classList.add("img-dark");
+
+const darkImg = document.createElement("img");
+darkImg.src = "/img/pf2.JPG";
+darkImg.alt = "Foto Profil";
+darkImg.style.width = "100%";
+darkImg.style.borderRadius = "5px";
+darkImgDiv.appendChild(darkImg);
+
+// _____________
+// About
+
+// Clock untuk about
+const clockDiv = document.createElement("div");
+clockDiv.classList.add("clock-dark");
+
+const clock = document.createElement("h2");
+clock.id = "clock";
+clockDiv.appendChild(clock);
+
+let clockInterval; // Menyimpan interval clock
+
+const pAbout = document.createElement("p");
+pAbout.textContent = `I am a website developer with an educational background in Agricultural Engineering. 
+I graduated from one of the universities in Indonesia in 2020. 
+Although my career path slightly deviates from my academic background, I chose to focus on improving my skills in programming, specifically in web development. 
+I decided to pursue a career as a website developer because of my interest in programming, animation, and design. 
+Additionally, I enjoy working with computers more than doing other types of work. 
+I gained my skills through self-learning via online tutorials and also through an intensive three-month training program at one of the well-known training institutions.`;
+
+// Gears untuk efek scroll
+const gearsDiv = document.createElement("div");
+gearsDiv.classList.add("gears");
+
+const gearsI = document.createElement("i");
+gearsI.setAttribute("data-feather", "settings");
+gearsDiv.appendChild(gearsI);
+
+let gearIcon = null; // Nanti diisi setelah feather.replace()
+
+// Event untuk toggle dark mode
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  home.classList.toggle("dark");
+  about.classList.toggle("dark");
+  project.classList.toggle("dark");
+  contact.classList.toggle("dark");
+  navbar.classList.toggle("dark");
+  navbar2.classList.toggle("dark");
+  footer.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
+    toggleBtn.textContent = "Light Mode";
+
+    if (!navbar.contains(homeNav)) {
+      navbar.append(homeNav);
+    }
+    if (!navbar.contains(projectNav)) {
+      navbar.append(projectNav);
+    }
+    if (!navbar.contains(buttonNav)) {
+      navbar.append(buttonNav);
+    }
+
+    if (!content.contains(darkImgDiv)) {
+      content.prepend(darkImgDiv);
+    }
+
+    if (!about.contains(clockDiv)) {
+      about.append(clockDiv);
+      startClock();
+    }
+
+    if (!about.contains(pAbout)) {
+      about.append(pAbout);
+    }
+
+    if (!body.contains(gearsDiv)) {
+      body.appendChild(gearsDiv);
+    }
+    if (!body.contains(textMove)) {
+      body.appendChild(textMove);
+
+      // Setelah ditambahkan ke DOM, baru ambil marquee dan jalankan animasi
+      const marquee = document.getElementById("marquee");
+      let position = -marquee.offsetWidth; // mulai dari luar kiri layar
+
+      function moveMarquee() {
+        position += 2; // kecepatan gerak
+        marquee.style.left = position + "px";
+
+        if (position > window.innerWidth) {
+          position = -marquee.offsetWidth; // reset ke kiri
+        }
+
+        animationId = requestAnimationFrame(moveMarquee);
+      }
+
+      moveMarquee();
+    }
+
+    feather.replace(); // Replace <i> dengan SVG
+    gearIcon = document.querySelector(".gears svg");
+  } else {
+    toggleBtn.textContent = "Dark Mode";
+    if (navbar.contains(homeNav)) {
+      homeNav.remove();
+    }
+    if (navbar.contains(projectNav)) {
+      projectNav.remove();
+    }
+
+    if (content.contains(darkImgDiv)) {
+      darkImgDiv.remove();
+    }
+
+    if (about.contains(clockDiv)) {
+      clockDiv.remove();
+      stopClock();
+    }
+
+    if (about.contains(pAbout)) {
+      pAbout.remove();
+    }
+    if (body.contains(gearsDiv)) {
+      gearsDiv.remove();
+    }
+
+    gearIcon = null;
+  }
+});
+
+buttonNav.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  home.classList.toggle("dark");
+  about.classList.toggle("dark");
+  project.classList.toggle("dark");
+  contact.classList.toggle("dark");
+  navbar.classList.toggle("dark");
+  navbar2.classList.toggle("dark");
+  footer.classList.toggle("dark");
+  toggleBtn.textContent = "Dark Mode";
+
+  if (navbar.contains(homeNav)) {
+    homeNav.remove();
+  }
+  if (navbar.contains(projectNav)) {
+    projectNav.remove();
+  }
+  if (navbar.contains(buttonNav)) {
+    buttonNav.remove();
+  }
+  if (navbar.contains(buttonNav)) {
+    buttonNav.remove();
+  }
+  if (navbar.contains(homeNav)) {
+    homeNav.remove();
+  }
+  if (navbar.contains(projectNav)) {
+    projectNav.remove();
+  }
+
+  if (content.contains(darkImgDiv)) {
+    darkImgDiv.remove();
+  }
+
+  if (about.contains(clockDiv)) {
+    clockDiv.remove();
+    stopClock();
+  }
+
+  if (about.contains(pAbout)) {
+    pAbout.remove();
+  }
+
+  if (body.contains(gearsDiv)) {
+    gearsDiv.remove();
+  }
+  if (body.contains(textMove)) {
+    textMove.remove();
+    cancelAnimationFrame(animationId); // hentikan animasi
+  }
+
+  gearIcon = null;
+});
+
+// Event untuk rotasi gear saat scroll
+window.addEventListener("scroll", () => {
+  if (gearIcon) {
+    const rotation = window.scrollY;
+    gearIcon.style.transform = `rotate(${rotation}deg)`;
+  }
+});
+
+// Fungsi update jam
+function updateClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  clock.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Fungsi mulai clock
+function startClock() {
+  updateClock();
+  clockInterval = setInterval(updateClock, 1000);
+}
+
+// Fungsi stop clock
+function stopClock() {
+  clearInterval(clockInterval);
+}
