@@ -340,7 +340,7 @@ const darkImgDiv = document.createElement("div");
 darkImgDiv.classList.add("img-dark");
 
 const darkImg = document.createElement("img");
-darkImg.src = "/img/pf2.JPG";
+darkImg.src = "/img/kyboard.JPG";
 darkImg.alt = "Foto Profil";
 darkImg.style.width = "100%";
 darkImg.style.borderRadius = "5px";
@@ -401,8 +401,8 @@ toggleBtn.addEventListener("click", () => {
       navbar.append(buttonNav);
     }
 
-    if (!content.contains(darkImgDiv)) {
-      content.prepend(darkImgDiv);
+    if (!home.contains(darkImgDiv)) {
+      home.prepend(darkImgDiv);
     }
 
     if (!about.contains(clockDiv)) {
@@ -449,7 +449,7 @@ toggleBtn.addEventListener("click", () => {
       projectNav.remove();
     }
 
-    if (content.contains(darkImgDiv)) {
+    if (home.contains(darkImgDiv)) {
       darkImgDiv.remove();
     }
 
@@ -499,7 +499,7 @@ buttonNav.addEventListener("click", () => {
     projectNav.remove();
   }
 
-  if (content.contains(darkImgDiv)) {
+  if (home.contains(darkImgDiv)) {
     darkImgDiv.remove();
   }
 

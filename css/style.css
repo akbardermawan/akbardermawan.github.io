@@ -314,30 +314,62 @@ body {
   justify-content: space-between;
   width: 100%;
   height: 25rem;
+  padding-bottom: 3rem;
 }
-.about .top .top-left {
-  width: 55%;
+
+/* ____________________________ */
+.top-left {
+  width: 50%;
+  position: relative;
+  perspective: 1000px;
+  perspective-origin: center;
+  position: relative;
+}
+
+/* Animasi mengapung untuk img1 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Animasi berputar untuk img2 */
+@keyframes spin {
+  from {
+    transform: rotateX(70deg) rotate(0deg);
+  }
+  to {
+    transform: rotateX(70deg) rotate(360deg);
+  }
+}
+
+.img1 {
+  position: absolute;
   height: 100%;
-  border-radius: 20px;
-  display: flex;
-  justify-content: start;
-  align-items: end;
-  background-image: url("../img/bgc2.JPG"); /* Ganti dengan path gambar Anda */
-  background-size: cover; /* Agar gambar menutupi seluruh area */
-  background-position: bottom; /* Pusatkan gambar */
-  background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+  left: 0;
+  top: -1rem;
+  animation: float 3s ease-in-out infinite;
+  z-index: 2;
 }
-.about .top .top-left h6 {
-  margin-left: 3rem;
-  margin-right: 3rem;
-  margin-bottom: 3rem;
-  font-size: 2rem;
-  color: rgb(224, 241, 176);
-  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.67);
-  font-weight: bold;
+
+.img2 {
+  position: absolute;
+  height: 100%;
+  bottom: -9rem;
+  left: 1.8rem;
+  animation: spin 5s linear infinite;
+  z-index: 1;
+  opacity: 0.8;
 }
+
+/* ________________________________ */
+
 .about .top .top-right {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -350,7 +382,7 @@ body {
   border-radius: 5px;
 }
 .about .top .top-right .top-right-top:hover {
-  background: #419e8d;
+  background: rgb(0, 172, 172);
   color: white;
 }
 .about .top .top-right .top-right-top p:hover {
@@ -371,7 +403,7 @@ body {
   border-radius: 5px;
 }
 .about .top .top-right .top-right-bottom:hover {
-  background: #419e8d;
+  background: rgb(0, 172, 172);
   color: white;
 }
 .about .top .top-right .top-right-bottom p:hover {
@@ -506,7 +538,7 @@ body {
 }
 .about .bottom .bottom-right p {
   font-size: 1rem;
-  color: white;
+  color: black;
   position: absolute;
   left: 5%;
   top: 30%;
@@ -536,7 +568,15 @@ body {
   text-align: center;
   font-size: 2.7rem;
   margin-bottom: 4rem;
-  color: #359381;
+  /* Gradien hijau tua ke kuning */
+  background: linear-gradient(
+    90deg,
+    #006400,
+    #ffd700
+  ); /* #006400 = dark green, #FFD700 = gold/yellow */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.308);
 }
 /* slidebar */
@@ -733,7 +773,15 @@ body {
   justify-content: center;
   font-size: 3rem;
   margin-bottom: 3rem;
-  color: #359381;
+  /* Gradien hijau tua ke kuning */
+  background: linear-gradient(
+    90deg,
+    #0f5301,
+    #00ccff
+  ); /* #006400 = dark green, #FFD700 = gold/yellow */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.308);
   font-weight: bold;
 }
@@ -1519,20 +1567,20 @@ footer .socials .credit a {
   font-size: 24px;
   top: 50%;
   transform: translateY(-50%);
-  color: #00ff00;
+  color: #0ff;
 }
 
 .dark .gears {
   position: fixed;
   top: 5rem;
-  left: 2rem;
+  right: 2rem;
   z-index: 1000;
 }
 .dark .gears svg {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 3.5rem;
+  height: 3.5rem;
   transition: transform 0.1s linear;
-  color: #00ff00;
+  color: #0ff;
 }
 
 .home.dark {
@@ -1566,7 +1614,7 @@ footer .socials .credit a {
 }
 
 .navbar.dark a {
-  color: #00ff00;
+  color: #0ff;
   margin-left: 1rem;
   margin-right: 1rem;
   font-size: 3rem;
@@ -1577,58 +1625,33 @@ footer .socials .credit a {
 }
 .navbar.dark button {
   background: #000000cb;
-  color: #00ff00;
-  border: 1px solid #00ff00;
+  color: #0ff;
+  border: 1px solid #0ff;
   padding: 1rem;
   border-radius: 10px;
   font-size: 1.5rem;
   margin-left: 1.5rem;
 }
 .navbar.dark button:hover {
-  background: #00ff00;
+  background: #0ff;
   color: white;
   border: 1px solid white;
-  box-shadow: 0 0 20px white, 0 0 30px #00ff00, 0 0 40px #00ff00; /* efek glow lebih kuat saat hover */
+  box-shadow: 0 0 20px white, 0 0 30px #0ff, 0 0 40px #0ff; /* efek glow lebih kuat saat hover */
 }
 
 .navbar2.dark {
   display: none;
 }
-
-.home.dark .row .home-img {
-  display: none;
+.home.dark {
+  padding: 0;
 }
-.home.dark .row .content {
-  background: rgba(255, 255, 255, 0.082);
-  border: 1px solid #00ff00;
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.home.dark .row .content a {
-  display: none;
-}
-.home.dark .row .content p {
-  display: none;
-}
-.home.dark .row .content > span {
-  display: none;
-}
-.home.dark .row .content .controls {
-  display: none;
-}
-
-.home.dark .row .content .img-dark {
-  width: 30%;
-}
-
-.home.dark .row .content .img-dark img {
+.home.dark .img-dark {
   width: 100%;
 }
-.home.dark .row .content .info {
+.home.dark .row {
   display: none;
 }
+
 .about.dark {
   display: flex;
   justify-content: center;
@@ -1645,11 +1668,11 @@ footer .socials .credit a {
 }
 .about.dark .clock-dark h2 {
   width: 100%;
-  color: #00ff00;
+  color: rgb(96, 248, 248);
   font-size: 2rem;
 }
 .about.dark p {
-  color: #00ff00;
+  color: white;
   text-align: justify;
   font-family: sans-serif;
   font-size: 1.5rem;
@@ -1666,7 +1689,9 @@ footer .socials .credit a {
   justify-content: center;
 }
 .project.dark > h2 {
-  color: #00ff00;
+  background: linear-gradient(90deg, #00f0ff, #0066ff); /* gradien biru neon */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 1rem;
   display: inline-block;
   position: relative;
@@ -1679,7 +1704,7 @@ footer .socials .credit a {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #00ff00;
+  border: 2px solid #00ffff;
   box-sizing: border-box;
   clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   animation: borderAnimation 4s linear infinite;
