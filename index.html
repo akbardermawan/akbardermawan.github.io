@@ -55,6 +55,8 @@
     
     </div>
 
+     <div class="threejs-container" id="threejs-container"></div>
+
     <!-- Home -->
     <section class="home" id="home">
       <div class="row">
@@ -95,12 +97,14 @@
         
 
         <div class="top-right" data-aos="fade-left" data-aos-duration="1500"  data-aos-delay="50">
+         
           <div class="top-right-top" >
             <div class="box"><i data-feather="code"></i></div>
             <div class="text"><P>
               With over two years in software development, I've built various web apps and tools using different languages and frameworks to create efficient, scalable solutions.
             </P></div>
           </div>
+
           <div class="top-right-bottom" >
             <div class="box"><i data-feather="globe"></i></div>
             <div><P>
@@ -378,8 +382,8 @@
       data-aos-offset="300" 
       data-aos-duration="2000"
       >Contact Me</h2>
-     
-      <div class="row">
+      <div class="container">
+        <div class="row">
         
         <form 
         method="post"
@@ -408,9 +412,13 @@
             <button type="submit" class="btn">Kirim Pesan</button>
           </div>
         </form>
+        </div>
+       
       </div>
+      
     </section>
 
+   
  <!-- Footer Item detail-->
  <footer id="footer">
   
@@ -600,7 +608,67 @@
    </script>
 
 
+    <!-- cdn Three js -->
+      <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <!-- code three js -->
+     <script>
+     // Scene setup
+const container = document.getElementById("threejs-container");
+const scene = new THREE.Scene();
+// scene.background = new THREE.Color(0x121212); // Jangan pakai ini jika ingin background transparan
 
+const camera = new THREE.PerspectiveCamera(
+  45,
+  container.clientWidth / container.clientHeight,
+  0.1,
+  1000
+);
+camera.position.z = 5;
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setClearColor(0x000000, 0); // transparan background
+container.appendChild(renderer.domElement);
+
+// Cube geometry and material
+const geometry = new THREE.BoxGeometry(1.8, 1.8, 1.8);
+const material = new THREE.MeshStandardMaterial({
+  color: 0x4fc3f7,
+  roughness: 0.5,
+  metalness: 0.7,
+  transparent: true,
+  opacity: 0.5 // sesuaikan transparansi di sini
+});
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0x4fc3f7, 1);
+directionalLight.position.set(5, 5, 5);
+scene.add(directionalLight);
+
+// Animation loop
+function animate() {
+  requestAnimationFrame(animate);
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+  renderer.render(scene, camera);
+}
+animate();
+
+// Responsive resize
+window.addEventListener("resize", () => {
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+  renderer.setSize(width, height);
+});
+
+    </script>
 
 
     <!-- MyScrip -->

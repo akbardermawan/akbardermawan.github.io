@@ -157,7 +157,13 @@ body {
   width: 24px;
   height: 24px;
 }
-
+.threejs-container {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  z-index: 999;
+  top: 5rem;
+}
 /* home */
 .home {
   padding: 10rem 7% 1.4rem;
@@ -380,14 +386,14 @@ body {
   border: 1px solid gray;
   padding: 1rem;
   border-radius: 5px;
+  transition: width 0.3s ease;
 }
+
 .about .top .top-right .top-right-top:hover {
-  background: rgb(0, 172, 172);
-  color: white;
+  transform: translate(-10px);
+  border: 2px solid #359381;
 }
-.about .top .top-right .top-right-top p:hover {
-  color: white;
-}
+
 .about .top .top-right .top-right-top .box {
   width: 100%;
   display: flex;
@@ -401,14 +407,13 @@ body {
   border: 1px solid gray;
   padding: 1rem;
   border-radius: 5px;
+  transition: width 0.3s ease;
 }
 .about .top .top-right .top-right-bottom:hover {
-  background: rgb(0, 172, 172);
-  color: white;
+  transform: translate(-10px);
+  border: 2px solid #359381;
 }
-.about .top .top-right .top-right-bottom p:hover {
-  color: white;
-}
+
 .about .top .top-right .top-right-bottom .box {
   width: 100%;
   display: flex;
@@ -535,6 +540,10 @@ body {
   border-radius: 30px;
   overflow: hidden;
   position: relative;
+  transition: width 0.3s ease;
+}
+.about .bottom .bottom-right:hover {
+  width: 57%;
 }
 .about .bottom .bottom-right p {
   font-size: 1rem;
@@ -549,7 +558,6 @@ body {
   line-height: 1.2;
   /* Menyesuaikan warna teks berdasarkan latar belakang */
   color: white; /* Jika latar belakangnya gelap */
-  mix-blend-mode: difference; /* Untuk menyesuaikan warna otomatis */
   text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.67);
   font-weight: bold;
   position: absolute;
@@ -789,7 +797,12 @@ body {
   padding-left: 1rem;
   color: black;
 }
-.contact .row {
+.contact .container {
+  width: 100%;
+  display: flex;
+}
+.contact .container .row {
+  width: 100%;
   display: flex;
   flex-direction: column; /* Responsif untuk layar kecil */
   align-items: center;
@@ -798,7 +811,7 @@ body {
   padding: 1rem; /* Tambahkan padding agar konten tidak terlalu rapat */
 }
 
-.contact .row form {
+.contact .container .row form {
   width: 100%;
   max-width: 500px; /* Membatasi lebar form agar tidak terlalu lebar */
   padding: 2rem;
@@ -808,7 +821,7 @@ body {
   margin-bottom: 4rem;
 }
 
-.contact .row form .input-group {
+.contact .container .row form .input-group {
   display: flex;
   align-items: center;
   margin-top: 2rem;
@@ -818,14 +831,14 @@ body {
   overflow: hidden; /* Menghindari padding yang berlebihan */
 }
 
-.contact .row form .input-group label {
+.contact .container .row form .input-group label {
   color: #000;
   font-size: 1.6rem;
   padding-right: 1rem;
 }
 
-.contact .row form .input-group input,
-.contact .row form .input-group textarea {
+.contact .container .row form .input-group input,
+.contact .container .row form .input-group textarea {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.7rem;
@@ -835,11 +848,11 @@ body {
   color: black;
 }
 
-.contact .row form .input-group textarea {
+.contact .container .row form .input-group textarea {
   resize: vertical; /* Membatasi resize hanya vertikal */
 }
 
-.contact .row form .btn {
+.contact .container .row form .btn {
   margin-top: 3rem;
   padding: 1rem 2rem;
   font-size: 1.7rem;
@@ -851,9 +864,10 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.contact .row form .btn:hover {
+.contact .container .row form .btn:hover {
   background-color: #f88f05;
 }
+
 footer {
   background-color: #163832;
   text-align: center;
@@ -1546,6 +1560,9 @@ footer .socials .credit a {
   .project .hiden {
     display: none;
   }
+  .threejs-container {
+    display: none;
+  }
 }
 
 /* Dark Mode */
@@ -1709,6 +1726,10 @@ footer .socials .credit a {
   clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   animation: borderAnimation 4s linear infinite;
 }
+.threejs-container.dark {
+  display: none;
+}
+
 @keyframes borderAnimation {
   0% {
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
@@ -1741,6 +1762,7 @@ footer .socials .credit a {
 footer.dark {
   display: none;
 }
+
 /* tablet */
 @media (max-width: 768px) {
   .navbar.dark .navbar-extra {

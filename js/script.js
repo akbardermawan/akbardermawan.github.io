@@ -302,6 +302,7 @@ const contact = document.getElementById("contact");
 const navbar = document.getElementById("navbar");
 const navbar2 = document.getElementById("navbar2");
 const content = document.getElementById("content");
+const threejsContainer = document.getElementById("threejs-container");
 
 // text berjalan
 const textMove = document.createElement("div");
@@ -387,6 +388,7 @@ toggleBtn.addEventListener("click", () => {
   navbar.classList.toggle("dark");
   navbar2.classList.toggle("dark");
   footer.classList.toggle("dark");
+  threejsContainer.classList.toggle("dark");
 
   if (body.classList.contains("dark")) {
     toggleBtn.textContent = "Light Mode";
@@ -461,6 +463,7 @@ toggleBtn.addEventListener("click", () => {
     if (about.contains(pAbout)) {
       pAbout.remove();
     }
+
     if (body.contains(gearsDiv)) {
       gearsDiv.remove();
     }
@@ -478,6 +481,7 @@ buttonNav.addEventListener("click", () => {
   navbar.classList.toggle("dark");
   navbar2.classList.toggle("dark");
   footer.classList.toggle("dark");
+  threejsContainer.classList.toggle("dark");
   toggleBtn.textContent = "Dark Mode";
 
   if (navbar.contains(homeNav)) {
