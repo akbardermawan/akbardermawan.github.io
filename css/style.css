@@ -390,7 +390,6 @@ body {
 }
 
 .about .top .top-right .top-right-top:hover {
-  transform: translate(-10px);
   border: 2px solid #359381;
 }
 
