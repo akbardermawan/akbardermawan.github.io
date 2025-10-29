@@ -409,7 +409,6 @@ body {
   transition: width 0.3s ease;
 }
 .about .top .top-right .top-right-bottom:hover {
-  transform: translate(-10px);
   border: 2px solid #359381;
 }
 
@@ -1508,12 +1507,10 @@ footer .socials .credit a {
   .home .row .content .controls {
     margin-top: 0;
   }
-  .about .top .top-left {
-    width: 100%;
-  }
-  .about .top .top-right {
+  .about .top {
     display: none;
   }
+
   .about .bottom .bottom-left .bottom-left-top .bottom-left-top-top {
     position: absolute;
     top: 1rem;
